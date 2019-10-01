@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-// import Cards from './Cards'
+import CardsContainer from './components/CardContainer'
 
 import './App.css';
 
@@ -20,7 +20,7 @@ class App extends React.Component {
     .get('https://api.github.com/users/dmaack')
     .then(res => {
       this.setState({
-        user: res.data
+        user: [...this.state.user, res.data]
       })
       console.log(res)
     })
@@ -39,7 +39,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>React Github User Cards</h1>
-        
+        <CardsContainer user={this.state.user} />
       </div>
     );
   }

@@ -2,14 +2,15 @@ import React from 'react';
 import Cards from './Cards';
 
 class CardContainer extends React.Component {
-    constructor(props) {
-        super(props) 
-    }
+    // constructor(props) {
+    //     super(props); 
+    // }
     render() {
         return(
-            <div>
-            this.props.map(user => <Cards user={user} />
-            </div>
+            
+         this.props.user.map(user => <Cards user={user} />)
         )
-    }
+ }
 }
+
+export default CardContainer;
